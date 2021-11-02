@@ -1,0 +1,7 @@
+#ignore builds
+build
+#ignore other directories
+.vscode
+STM32-base
+templates
+tools
