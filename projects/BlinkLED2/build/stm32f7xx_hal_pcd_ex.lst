@@ -1,0 +1,476 @@
+ARM GAS  /tmp/ccjjoEcq.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"stm32f7xx_hal_pcd_ex.c"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.text.HAL_PCDEx_SetTxFiFo,"ax",%progbits
+  17              		.align	1
+  18              		.global	HAL_PCDEx_SetTxFiFo
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv5-d16
+  24              	HAL_PCDEx_SetTxFiFo:
+  25              	.LFB141:
+  26              		.file 1 "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c"
+   1:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /**
+   2:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   ******************************************************************************
+   3:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @file    stm32f7xx_hal_pcd_ex.c
+   4:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @author  MCD Application Team
+   5:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief   PCD Extended HAL module driver.
+   6:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *          This file provides firmware functions to manage the following
+   7:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *          functionalities of the USB Peripheral Controller:
+   8:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *           + Extended features functions
+   9:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *
+  10:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   ******************************************************************************
+  11:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @attention
+  12:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *
+  13:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
+  14:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * All rights reserved.</center></h2>
+  15:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *
+  16:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  17:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * the "License"; You may not use this file except in compliance with the
+  18:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * License. You may obtain a copy of the License at:
+  19:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  20:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *
+  21:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   ******************************************************************************
+  22:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+  23:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  24:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /* Includes ------------------------------------------------------------------*/
+  25:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** #include "stm32f7xx_hal.h"
+  26:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  27:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /** @addtogroup STM32F7xx_HAL_Driver
+  28:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @{
+  29:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+  30:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  31:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /** @defgroup PCDEx PCDEx
+  32:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief PCD Extended HAL module driver
+ARM GAS  /tmp/ccjjoEcq.s 			page 2
+
+
+  33:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @{
+  34:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+  35:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  36:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** #ifdef HAL_PCD_MODULE_ENABLED
+  37:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  38:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** #if defined (USB_OTG_FS) || defined (USB_OTG_HS)
+  39:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /* Private types -------------------------------------------------------------*/
+  40:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /* Private variables ---------------------------------------------------------*/
+  41:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /* Private constants ---------------------------------------------------------*/
+  42:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /* Private macros ------------------------------------------------------------*/
+  43:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /* Private functions ---------------------------------------------------------*/
+  44:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /* Exported functions --------------------------------------------------------*/
+  45:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  46:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /** @defgroup PCDEx_Exported_Functions PCDEx Exported Functions
+  47:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @{
+  48:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+  49:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  50:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /** @defgroup PCDEx_Exported_Functions_Group1 Peripheral Control functions
+  51:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief    PCDEx control functions
+  52:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   *
+  53:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** @verbatim
+  54:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****  ===============================================================================
+  55:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****                  ##### Extended features functions #####
+  56:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****  ===============================================================================
+  57:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     [..]  This section provides functions allowing to:
+  58:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****       (+) Update FIFO configuration
+  59:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  60:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** @endverbatim
+  61:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @{
+  62:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+  63:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** #if defined (USB_OTG_FS) || defined (USB_OTG_HS)
+  64:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /**
+  65:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief  Set Tx FIFO
+  66:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  hpcd PCD handle
+  67:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  fifo The number of Tx fifo
+  68:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  size Fifo size
+  69:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @retval HAL status
+  70:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+  71:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** HAL_StatusTypeDef HAL_PCDEx_SetTxFiFo(PCD_HandleTypeDef *hpcd, uint8_t fifo, uint16_t size)
+  72:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** {
+  27              		.loc 1 72 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  33 0000 30B4     		push	{r4, r5}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 5, -4
+  73:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   uint8_t i;
+  74:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   uint32_t Tx_Offset;
+  75:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  76:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   /*  TXn min size = 16 words. (n  : Transmit FIFO index)
+  77:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****       When a TxFIFO is not used, the Configuration should be as follows:
+  78:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****           case 1 :  n > m    and Txn is not used    (n,m  : Transmit FIFO indexes)
+ARM GAS  /tmp/ccjjoEcq.s 			page 3
+
+
+  79:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****          --> Txm can use the space allocated for Txn.
+  80:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****          case2  :  n < m    and Txn is not used    (n,m  : Transmit FIFO indexes)
+  81:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****          --> Txn should be configured with the minimum space of 16 words
+  82:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****      The FIFO is used optimally when used TxFIFOs are allocated in the top
+  83:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****          of the FIFO.Ex: use EP1 and EP2 as IN instead of EP1 and EP3 as IN ones.
+  84:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****      When DMA is used 3n * FIFO locations should be reserved for internal DMA registers */
+  85:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  86:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   Tx_Offset = hpcd->Instance->GRXFSIZ;
+  38              		.loc 1 86 0
+  39 0002 0468     		ldr	r4, [r0]
+  40 0004 606A     		ldr	r0, [r4, #36]
+  41              	.LVL1:
+  87:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+  88:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   if (fifo == 0U)
+  42              		.loc 1 88 0
+  43 0006 29B1     		cbz	r1, .L7
+  44 0008 0D46     		mov	r5, r1
+  89:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   {
+  90:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     hpcd->Instance->DIEPTXF0_HNPTXFSIZ = ((uint32_t)size << 16) | Tx_Offset;
+  91:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   }
+  92:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   else
+  93:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   {
+  94:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     Tx_Offset += (hpcd->Instance->DIEPTXF0_HNPTXFSIZ) >> 16;
+  45              		.loc 1 94 0
+  46 000a A36A     		ldr	r3, [r4, #40]
+  47 000c 00EB1340 		add	r0, r0, r3, lsr #16
+  48              	.LVL2:
+  95:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     for (i = 0U; i < (fifo - 1U); i++)
+  49              		.loc 1 95 0
+  50 0010 0023     		movs	r3, #0
+  51 0012 0CE0     		b	.L4
+  52              	.LVL3:
+  53              	.L7:
+  90:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   }
+  54              		.loc 1 90 0
+  55 0014 40EA0240 		orr	r0, r0, r2, lsl #16
+  56              	.LVL4:
+  57 0018 A062     		str	r0, [r4, #40]
+  58 001a 12E0     		b	.L3
+  59              	.LVL5:
+  60              	.L5:
+  96:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     {
+  97:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****       Tx_Offset += (hpcd->Instance->DIEPTXF[i] >> 16);
+  61              		.loc 1 97 0 discriminator 3
+  62 001c 03F14001 		add	r1, r3, #64
+  63 0020 04EB8101 		add	r1, r4, r1, lsl #2
+  64 0024 4968     		ldr	r1, [r1, #4]
+  65 0026 00EB1140 		add	r0, r0, r1, lsr #16
+  66              	.LVL6:
+  95:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     {
+  67              		.loc 1 95 0 discriminator 3
+  68 002a 0133     		adds	r3, r3, #1
+  69              	.LVL7:
+  70 002c DBB2     		uxtb	r3, r3
+  71              	.LVL8:
+  72              	.L4:
+  95:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     {
+ARM GAS  /tmp/ccjjoEcq.s 			page 4
+
+
+  73              		.loc 1 95 0 is_stmt 0 discriminator 1
+  74 002e 691E     		subs	r1, r5, #1
+  75 0030 8B42     		cmp	r3, r1
+  76 0032 F3D3     		bcc	.L5
+  98:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     }
+  99:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 100:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     /* Multiply Tx_Size by 2 to get higher performance */
+ 101:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****     hpcd->Instance->DIEPTXF[fifo - 1U] = ((uint32_t)size << 16) | Tx_Offset;
+  77              		.loc 1 101 0 is_stmt 1
+  78 0034 40EA0240 		orr	r0, r0, r2, lsl #16
+  79              	.LVL9:
+  80 0038 05F13F01 		add	r1, r5, #63
+  81 003c 04EB8101 		add	r1, r4, r1, lsl #2
+  82 0040 4860     		str	r0, [r1, #4]
+  83              	.LVL10:
+  84              	.L3:
+ 102:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   }
+ 103:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 104:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   return HAL_OK;
+ 105:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** }
+  85              		.loc 1 105 0
+  86 0042 0020     		movs	r0, #0
+  87 0044 30BC     		pop	{r4, r5}
+  88              	.LCFI1:
+  89              		.cfi_restore 5
+  90              		.cfi_restore 4
+  91              		.cfi_def_cfa_offset 0
+  92 0046 7047     		bx	lr
+  93              		.cfi_endproc
+  94              	.LFE141:
+  96              		.section	.text.HAL_PCDEx_SetRxFiFo,"ax",%progbits
+  97              		.align	1
+  98              		.global	HAL_PCDEx_SetRxFiFo
+  99              		.syntax unified
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.fpu fpv5-d16
+ 104              	HAL_PCDEx_SetRxFiFo:
+ 105              	.LFB142:
+ 106:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 107:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /**
+ 108:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief  Set Rx FIFO
+ 109:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  hpcd PCD handle
+ 110:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  size Size of Rx fifo
+ 111:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @retval HAL status
+ 112:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+ 113:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** HAL_StatusTypeDef HAL_PCDEx_SetRxFiFo(PCD_HandleTypeDef *hpcd, uint16_t size)
+ 114:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** {
+ 106              		.loc 1 114 0
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110              		@ link register save eliminated.
+ 111              	.LVL11:
+ 115:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   hpcd->Instance->GRXFSIZ = size;
+ 112              		.loc 1 115 0
+ 113 0000 0368     		ldr	r3, [r0]
+ARM GAS  /tmp/ccjjoEcq.s 			page 5
+
+
+ 114 0002 5962     		str	r1, [r3, #36]
+ 116:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 117:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   return HAL_OK;
+ 118:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** }
+ 115              		.loc 1 118 0
+ 116 0004 0020     		movs	r0, #0
+ 117              	.LVL12:
+ 118 0006 7047     		bx	lr
+ 119              		.cfi_endproc
+ 120              	.LFE142:
+ 122              		.section	.text.HAL_PCDEx_ActivateLPM,"ax",%progbits
+ 123              		.align	1
+ 124              		.global	HAL_PCDEx_ActivateLPM
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 128              		.fpu fpv5-d16
+ 130              	HAL_PCDEx_ActivateLPM:
+ 131              	.LFB143:
+ 119:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 120:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /**
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief  Activate LPM feature.
+ 122:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  hpcd PCD handle
+ 123:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @retval HAL status
+ 124:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+ 125:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** HAL_StatusTypeDef HAL_PCDEx_ActivateLPM(PCD_HandleTypeDef *hpcd)
+ 126:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** {
+ 132              		.loc 1 126 0
+ 133              		.cfi_startproc
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136              		@ link register save eliminated.
+ 137              	.LVL13:
+ 138 0000 0246     		mov	r2, r0
+ 127:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   USB_OTG_GlobalTypeDef *USBx = hpcd->Instance;
+ 139              		.loc 1 127 0
+ 140 0002 0368     		ldr	r3, [r0]
+ 141              	.LVL14:
+ 128:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 129:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   hpcd->lpm_active = 1U;
+ 142              		.loc 1 129 0
+ 143 0004 0121     		movs	r1, #1
+ 144 0006 C0F8FC13 		str	r1, [r0, #1020]
+ 130:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   hpcd->LPM_State = LPM_L0;
+ 145              		.loc 1 130 0
+ 146 000a 0020     		movs	r0, #0
+ 147              	.LVL15:
+ 148 000c 82F8F403 		strb	r0, [r2, #1012]
+ 131:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   USBx->GINTMSK |= USB_OTG_GINTMSK_LPMINTM;
+ 149              		.loc 1 131 0
+ 150 0010 9A69     		ldr	r2, [r3, #24]
+ 151              	.LVL16:
+ 152 0012 42F00062 		orr	r2, r2, #134217728
+ 153 0016 9A61     		str	r2, [r3, #24]
+ 132:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   USBx->GLPMCFG |= (USB_OTG_GLPMCFG_LPMEN | USB_OTG_GLPMCFG_LPMACK | USB_OTG_GLPMCFG_ENBESL);
+ 154              		.loc 1 132 0
+ 155 0018 596D     		ldr	r1, [r3, #84]
+ARM GAS  /tmp/ccjjoEcq.s 			page 6
+
+
+ 156 001a 024A     		ldr	r2, .L10
+ 157 001c 0A43     		orrs	r2, r2, r1
+ 158 001e 5A65     		str	r2, [r3, #84]
+ 133:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 134:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   return HAL_OK;
+ 135:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** }
+ 159              		.loc 1 135 0
+ 160 0020 7047     		bx	lr
+ 161              	.L11:
+ 162 0022 00BF     		.align	2
+ 163              	.L10:
+ 164 0024 03000010 		.word	268435459
+ 165              		.cfi_endproc
+ 166              	.LFE143:
+ 168              		.section	.text.HAL_PCDEx_DeActivateLPM,"ax",%progbits
+ 169              		.align	1
+ 170              		.global	HAL_PCDEx_DeActivateLPM
+ 171              		.syntax unified
+ 172              		.thumb
+ 173              		.thumb_func
+ 174              		.fpu fpv5-d16
+ 176              	HAL_PCDEx_DeActivateLPM:
+ 177              	.LFB144:
+ 136:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 137:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /**
+ 138:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief  Deactivate LPM feature.
+ 139:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  hpcd PCD handle
+ 140:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @retval HAL status
+ 141:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+ 142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** HAL_StatusTypeDef HAL_PCDEx_DeActivateLPM(PCD_HandleTypeDef *hpcd)
+ 143:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** {
+ 178              		.loc 1 143 0
+ 179              		.cfi_startproc
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182              		@ link register save eliminated.
+ 183              	.LVL17:
+ 144:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   USB_OTG_GlobalTypeDef *USBx = hpcd->Instance;
+ 184              		.loc 1 144 0
+ 185 0000 0368     		ldr	r3, [r0]
+ 186              	.LVL18:
+ 145:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 146:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   hpcd->lpm_active = 0U;
+ 187              		.loc 1 146 0
+ 188 0002 0021     		movs	r1, #0
+ 189 0004 C0F8FC13 		str	r1, [r0, #1020]
+ 147:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   USBx->GINTMSK &= ~USB_OTG_GINTMSK_LPMINTM;
+ 190              		.loc 1 147 0
+ 191 0008 9A69     		ldr	r2, [r3, #24]
+ 192 000a 22F00062 		bic	r2, r2, #134217728
+ 193 000e 9A61     		str	r2, [r3, #24]
+ 148:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   USBx->GLPMCFG &= ~(USB_OTG_GLPMCFG_LPMEN | USB_OTG_GLPMCFG_LPMACK | USB_OTG_GLPMCFG_ENBESL);
+ 194              		.loc 1 148 0
+ 195 0010 586D     		ldr	r0, [r3, #84]
+ 196              	.LVL19:
+ 197 0012 024A     		ldr	r2, .L13
+ 198 0014 0240     		ands	r2, r2, r0
+ARM GAS  /tmp/ccjjoEcq.s 			page 7
+
+
+ 199 0016 5A65     		str	r2, [r3, #84]
+ 149:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 150:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   return HAL_OK;
+ 151:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** }
+ 200              		.loc 1 151 0
+ 201 0018 0846     		mov	r0, r1
+ 202 001a 7047     		bx	lr
+ 203              	.L14:
+ 204              		.align	2
+ 205              	.L13:
+ 206 001c FCFFFFEF 		.word	-268435460
+ 207              		.cfi_endproc
+ 208              	.LFE144:
+ 210              		.section	.text.HAL_PCDEx_LPM_Callback,"ax",%progbits
+ 211              		.align	1
+ 212              		.weak	HAL_PCDEx_LPM_Callback
+ 213              		.syntax unified
+ 214              		.thumb
+ 215              		.thumb_func
+ 216              		.fpu fpv5-d16
+ 218              	HAL_PCDEx_LPM_Callback:
+ 219              	.LFB145:
+ 152:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 153:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** #endif /* defined (USB_OTG_FS) || defined (USB_OTG_HS) */
+ 154:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 155:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /**
+ 156:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief  Send LPM message to user layer callback.
+ 157:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  hpcd PCD handle
+ 158:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  msg LPM message
+ 159:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @retval HAL status
+ 160:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+ 161:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** __weak void HAL_PCDEx_LPM_Callback(PCD_HandleTypeDef *hpcd, PCD_LPM_MsgTypeDef msg)
+ 162:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** {
+ 220              		.loc 1 162 0
+ 221              		.cfi_startproc
+ 222              		@ args = 0, pretend = 0, frame = 0
+ 223              		@ frame_needed = 0, uses_anonymous_args = 0
+ 224              		@ link register save eliminated.
+ 225              	.LVL20:
+ 226 0000 7047     		bx	lr
+ 227              		.cfi_endproc
+ 228              	.LFE145:
+ 230              		.section	.text.HAL_PCDEx_BCD_Callback,"ax",%progbits
+ 231              		.align	1
+ 232              		.weak	HAL_PCDEx_BCD_Callback
+ 233              		.syntax unified
+ 234              		.thumb
+ 235              		.thumb_func
+ 236              		.fpu fpv5-d16
+ 238              	HAL_PCDEx_BCD_Callback:
+ 239              	.LFB146:
+ 163:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   /* Prevent unused argument(s) compilation warning */
+ 164:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   UNUSED(hpcd);
+ 165:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   UNUSED(msg);
+ 166:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 167:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 168:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****             the HAL_PCDEx_LPM_Callback could be implemented in the user file
+ARM GAS  /tmp/ccjjoEcq.s 			page 8
+
+
+ 169:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****    */
+ 170:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** }
+ 171:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** 
+ 172:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** /**
+ 173:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @brief  Send BatteryCharging message to user layer callback.
+ 174:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  hpcd PCD handle
+ 175:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @param  msg LPM message
+ 176:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   * @retval HAL status
+ 177:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c ****   */
+ 178:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** __weak void HAL_PCDEx_BCD_Callback(PCD_HandleTypeDef *hpcd, PCD_BCD_MsgTypeDef msg)
+ 179:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c **** {
+ 240              		.loc 1 179 0
+ 241              		.cfi_startproc
+ 242              		@ args = 0, pretend = 0, frame = 0
+ 243              		@ frame_needed = 0, uses_anonymous_args = 0
+ 244              		@ link register save eliminated.
+ 245              	.LVL21:
+ 246 0000 7047     		bx	lr
+ 247              		.cfi_endproc
+ 248              	.LFE146:
+ 250              		.text
+ 251              	.Letext0:
+ 252              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 253              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 254              		.file 4 "Drivers/CMSIS/Include/core_cm7.h"
+ 255              		.file 5 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h"
+ 256              		.file 6 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h"
+ 257              		.file 7 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h"
+ 258              		.file 8 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h"
+ 259              		.file 9 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd.h"
+ 260              		.file 10 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h"
+ARM GAS  /tmp/ccjjoEcq.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f7xx_hal_pcd_ex.c
+     /tmp/ccjjoEcq.s:17     .text.HAL_PCDEx_SetTxFiFo:0000000000000000 $t
+     /tmp/ccjjoEcq.s:24     .text.HAL_PCDEx_SetTxFiFo:0000000000000000 HAL_PCDEx_SetTxFiFo
+     /tmp/ccjjoEcq.s:97     .text.HAL_PCDEx_SetRxFiFo:0000000000000000 $t
+     /tmp/ccjjoEcq.s:104    .text.HAL_PCDEx_SetRxFiFo:0000000000000000 HAL_PCDEx_SetRxFiFo
+     /tmp/ccjjoEcq.s:123    .text.HAL_PCDEx_ActivateLPM:0000000000000000 $t
+     /tmp/ccjjoEcq.s:130    .text.HAL_PCDEx_ActivateLPM:0000000000000000 HAL_PCDEx_ActivateLPM
+     /tmp/ccjjoEcq.s:164    .text.HAL_PCDEx_ActivateLPM:0000000000000024 $d
+     /tmp/ccjjoEcq.s:169    .text.HAL_PCDEx_DeActivateLPM:0000000000000000 $t
+     /tmp/ccjjoEcq.s:176    .text.HAL_PCDEx_DeActivateLPM:0000000000000000 HAL_PCDEx_DeActivateLPM
+     /tmp/ccjjoEcq.s:206    .text.HAL_PCDEx_DeActivateLPM:000000000000001c $d
+     /tmp/ccjjoEcq.s:211    .text.HAL_PCDEx_LPM_Callback:0000000000000000 $t
+     /tmp/ccjjoEcq.s:218    .text.HAL_PCDEx_LPM_Callback:0000000000000000 HAL_PCDEx_LPM_Callback
+     /tmp/ccjjoEcq.s:231    .text.HAL_PCDEx_BCD_Callback:0000000000000000 $t
+     /tmp/ccjjoEcq.s:238    .text.HAL_PCDEx_BCD_Callback:0000000000000000 HAL_PCDEx_BCD_Callback
+                     .debug_frame:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS
